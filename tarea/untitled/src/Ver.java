@@ -18,7 +18,6 @@ public class Ver extends JFrame{
         buscarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                dispose();
                 String nombre = nombreTextField.getText();
 
                 try {
