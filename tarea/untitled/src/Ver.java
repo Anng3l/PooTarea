@@ -28,6 +28,15 @@ public class Ver extends JFrame{
                 }
             }
         });
+
+        volverButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Menu menu = new Menu();
+                menu.setVisible(true);
+            }
+        });
     }
 
 
@@ -45,8 +54,12 @@ public class Ver extends JFrame{
 
         if (rs.next())
         {
-            String x = rs.getString("nombre");
-            JOptionPane.showMessageDialog(null, "id" + " " + "nombre" + " " + "apellido" + " "  + "edad");
+            String id = rs.getString("id");
+            String nom = rs.getString("nombre");
+            String ape = rs.getString("apellido");
+            Integer edad = rs.getInt("edad");
+
+            JOptionPane.showMessageDialog(null, "id: " + id + "\nnombre: " + nom + "\nApellido: " + ape + "\nEdad: " + edad);
         }
 
         rs.close();
